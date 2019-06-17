@@ -4,28 +4,32 @@ var metrosCuadrados = 0;
 var tipoDeInmueble = "";
 var valorDeAdministracion = 0;
 var valorCuotaDeAseo = 0;
-var cantidadDeHabitantes = 0;
 var edad;
 var genero = "";
 var valorDerechosDeGimnasio = 0;
+var cantidadDePersonas = 0;
 
 
 metrosCuadrados = prompt("Digite los " + "metros cuadrado");
 tipoDeInmueble = prompt('Digite el tipo de ' + 'inmueble "CASA" o "APARTAMENTO".')
 tipoDeInmueble = tipoDeInmueble.toUpperCase()
-genero = prompt('Digite el ' + 'genero "MASCULINO" o "FEMENINO".');
-genero = genero.toUpperCase()
-edad = prompt("Digite la edad");
-
+cantidadDePersonas = prompt("Digite la cantidad de personas que viven en el inmueble")
 
 
 // Procesos o calculos
+
+for (var i = 0; i < cantidadDePersonas; i++){
+    genero = prompt('Digite el ' + 'genero "MASCULINO" o "FEMENINO ".' + (i+1));
+    genero = genero.toUpperCase()
+    edad = prompt("Digite la edad " + (i+1));
+    valorDerechosDeGimnasio += calcularValorDerechoDeGimnasio(genero, edad)
+}
 
 valorDeAdministracion = calcularValorDeAdministracion(metrosCuadrados, tipoDeInmueble)
 
 valorCuotaDeAseo = calcularValorDeCuotaAseo(valorDeAdministracion, metrosCuadrados)
 
-valorDerechosDeGimnasio = calcularValorDerechoDeGimnasio(genero, edad)
+
 
     function calcularValorDeAdministracion(metrosCuadrados, tipoDeInmueble){
 if(tipoDeInmueble == "CASA"){
