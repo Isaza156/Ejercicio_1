@@ -1,5 +1,4 @@
 // Mis variables de entrada
-
 var metrosCuadrados = 0; 
 var tipoDeInmueble = "";
 var valorDeAdministracion = 0;
@@ -8,12 +7,16 @@ var edad;
 var genero = "";
 var valorDerechosDeGimnasio = 0;
 var cantidadDePersonas = 0;
+var cantidadDeInmuebles = 0;
+var totalAPagar = 0;
+var totalDeInmuebles = 0;
+cantidadDeInmuebles = prompt("Digite la cantidad de inmuebles");
+for(var n = 0; n < cantidadDeInmuebles; n++){
 
-
-metrosCuadrados = prompt("Digite los " + "metros cuadrado");
-tipoDeInmueble = prompt('Digite el tipo de ' + 'inmueble "CASA" o "APARTAMENTO".')
+metrosCuadrados = prompt("Digite los " + "metros cuadrado" + (n+1));
+tipoDeInmueble = prompt('Digite el tipo de ' + 'inmueble "CASA" o "APARTAMENTO".' + (n+1))
 tipoDeInmueble = tipoDeInmueble.toUpperCase()
-cantidadDePersonas = prompt("Digite la cantidad de personas que viven en el inmueble")
+cantidadDePersonas = prompt("Digite la cantidad de personas que viven en el inmueble" + (n+1))
 
 
 // Procesos o calculos
@@ -87,8 +90,14 @@ break;
 }
 }
 
+totalAPagar = valorDeAdministracion + valorCuotaDeAseo + valorDerechosDeGimnasio
+totalDeInmuebles += total
 // Salidas del sistema
 
-document.write("El valor de la administracion es " + valorDeAdministracion + "<br>")
-document.write("El valor de la cuota de aseo es " + valorCuotaDeAseo + "<br>")
-document.write("El valor de la cuota de gimnasio es " + valorDerechosDeGimnasio)
+    document.write("El valor de la administracion es " + valorDeAdministracion + "<br>")
+    document.write("El valor de la cuota de aseo es " + valorCuotaDeAseo + "<br>")
+    document.write("El valor de la cuota de gimnasio es " + valorDerechosDeGimnasio + "<br>")
+    document.write("El valor total a pagar es " + totalAPagar + "<br>")
+    
+}
+document.write("El valor total de los inmuebles es " + totalDeInmuebles + "<br>")
