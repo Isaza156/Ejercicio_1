@@ -53,16 +53,35 @@ switch(genero){
 case "MASCULINO":
 
     if (edad < 10){
+return 0
+    } else if(edad>=10 && edad<20) {
+return 20000
+    }else if(edad>=20 && edad<40){
+return 15000
+    }else if(edad>=40 && edad<60){
 return 10000
-    } else {
-        return 20000
+    }else if(edad>60){
+        return 0
     }
+
 break;
-    }
+ 
+    case "FEMENINO":
+            if (edad < 10){
+                return 0
+                    } else if(edad>=10 && edad<18) {
+                return 15000
+                    }else if(edad>=18 && edad<35){
+                return 12000
+                    }else if(edad>=35 && edad<55){
+                return 8000
+                    }else if (edad>55){
+                        return 0
+                    }
+                
+                break;
 }
-
-
-
+}
 
 // Salidas del sistema
 
