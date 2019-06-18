@@ -91,7 +91,7 @@ break;
 }
 
 totalAPagar = valorDeAdministracion + valorCuotaDeAseo + valorDerechosDeGimnasio
-totalDeInmuebles += total
+totalDeInmuebles += totalAPagar
 // Salidas del sistema
 
     document.write("El valor de la administracion es " + valorDeAdministracion + "<br>")
